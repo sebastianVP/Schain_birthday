@@ -26,3 +26,7 @@ Escribimos los siguientes pasos:
 Recordemos el directorio.
 
 * $ tree
+ BIRTHDAY
+  - Schain_birthday: Notas
+  - schain_amisr: Entorno virtual
+  - schain: Librerias schain con repositorio de amis-14, el nombre es master_tmp
