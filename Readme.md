@@ -17,5 +17,12 @@ Nota:
 Escribimos los siguientes pasos:
 
 * $ git clone http://intranet.igp.gob.pe:8082/schain
-* $ git checkout schain_tmp
+* La carpeta que contiene el software Signal Chain se llama schain
+* $ git status
+* $ git checkout master_tmp
+* $ git status
 * $ git log
+
+Recordemos el directorio.
+
+* $ tree
