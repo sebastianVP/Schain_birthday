@@ -6,6 +6,8 @@ Nota:
 
 * La carpeta superior se llama **BIRTHDAY**
 * cd BIRTHDAY
-* Esta carpeta contiene el repositorio Schain_birthday y el repositorio schain_amisr
-* Estamos creando el entorno virtual: source schain_master/bin/activate
+* Esta carpeta contiene el repositorio Schain_birthday y el entorno virtual schain_amisr
+* Estamos creando el entorno virtual schain_amisr, para activarlo usamos el siguiente comando:
+	 source schain_master/bin/activate
+
 * Link del repositorio de [schain](http://intranet.igp.gob.pe:8082/schain)
