@@ -40,3 +40,7 @@ Estamos haciendo todo este repaso y trabajo con el entorno **emulado de Ubuntu**
  * La ruta de datos es la siguiente:
 
 	/mnt/c/Users/soporte/Downloads/2024/20240822.002
+
+Para utilizar el vscode desde windows, debemos abrir una carpeta con la siguiente direccion:
+
+	\\wsl.localhost\Ubuntu-20.04\home\soporte\BIRTHDAY
