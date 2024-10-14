@@ -44,3 +44,8 @@ Estamos haciendo todo este repaso y trabajo con el entorno **emulado de Ubuntu**
 Para utilizar el vscode desde windows, debemos abrir una carpeta con la siguiente direccion:
 
 	\\wsl.localhost\Ubuntu-20.04\home\soporte\BIRTHDAY
+
+
+Los entornos virtuales en esta carpeta se llama:
+ - schain_amisr
+ - schain_sophy

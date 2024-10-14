@@ -1,26 +1,3 @@
-
-Conversación abierta; 1 mensaje leído
-
-Ir al contenido
-Cómo usar Correo de INSTITUTO GEOFISICO DEL PERU con lectores de pantalla
-perc 
-
-script para winds
-Recibidos
-
-Percy Jesús Condor Patilongo
-Adjuntos
-mar, 1 oct, 9:41 a.m. (hace 13 días)
-para mí
-
-Te envio el script
-
-Percy
---
-
- Un archivo adjunto
-  •  Analizado por Gmail
-Really?Monday?Here you go!
 #!/usr/bin/env python
 '''
 Created on Jul 7, 2014
