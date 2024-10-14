@@ -39,4 +39,4 @@ Estamos haciendo todo este repaso y trabajo con el entorno **emulado de Ubuntu**
 
  * La ruta de datos es la siguiente:
 
-	/mnt/c/Users/soporte/Downloads/20240822.002
+	/mnt/c/Users/soporte/Downloads/2024/20240822.002
