@@ -30,3 +30,13 @@ Recordemos el directorio.
   - Schain_birthday: Notas
   - schain_amisr: Entorno virtual
   - schain: Librerias schain con repositorio de amis-14, el nombre es master_tmp
+
+Estamos haciendo todo este repaso y trabajo con el entorno **emulado de Ubuntu**.
+
+ * Directorio del Readme: 
+
+	/home/soporte/BIRTHDAY/Schain_birthday  
+
+ * La ruta de datos es la siguiente:
+
+	/mnt/c/Users/soporte/Downloads/20240822.002
