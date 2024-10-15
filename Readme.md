@@ -49,3 +49,15 @@ Para utilizar el vscode desde windows, debemos abrir una carpeta con la siguient
 Los entornos virtuales en esta carpeta se llama:
  - schain_amisr
  - schain_sophy
+
+
+En el repositorio de pruebas tenemos 2 scripts de referencia: tw_procesamiento.py y el mlt_2022_03.py, estos scripts
+dan origen al archivo de prueba:
+
+- winds_amisr.py
+
+
+# **OJO**
+
+Queda pendiente en fecha 15/10/2024
+Definir los cosenos directores en el patron de radiacion.
