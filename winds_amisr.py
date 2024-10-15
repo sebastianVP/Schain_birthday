@@ -24,6 +24,8 @@ def main():
     outPath = '/home/soporte/BIRTHDAY'
     #outPath = '/home/soporte/Data/AMISR14/2024/ISR'
     #outPath = '/home/soporte/Data/AMISR-procdata/AMISR-proc120/2022/ISR/'
+    procpath = "/mnt/c/Users/soporte/Downloads/proc_amisr"
+
 
 
     realtime_server='10.10.110.243:4444'
@@ -150,6 +152,22 @@ def main():
 
     opObj41 = param_proc.addOperation(name='SpectralMoments', optype='other')
 
+
+    opObj52 = param_proc.addOperation(name='HDFWriter', optype='other')
+    opObj52.addParameter(name='path', value=procpath)
+    opObj52.addParameter(name='blocksPerFile', value='100', format='int')
+    opObj52.addParameter(name='metadataList', value='type,inputUnit,heightList,paramInterval,timeZone', format='list')
+    opObj52.addParameter(name='dataList', value='moments,data_snr,noise,utctime,utctimeInit', format='list')
+    ##opObj52.addParameter(name='dataList', value='data_param,data_SNR,noise,utctime,utctimeInit', format='list')
+    ##opObj52.addParameter(name='mode', value='1', format='int')
+    
+    opObj53 = merge.addOperation(name='WindProfiler', optype='other')
+    opObj53.addParameter(name='technique', value='DBS', format='str')
+    opObj53.addParameter(name='dirCosx', value='0.0, -0.0, -0.04, 0.04', format='floatlist') 
+    opObj53.addParameter(name='dirCosy', value='0.0, -0.0, -0.04, -0.03', format='floatlist')
+    opObj53.addParameter(name='correctAzimuth', value='0', format='float')
+    #opObj23.addParameter(name='correctAzimuth', value='52.5414', format='float')
+    opObj53.addParameter(name='correctFactor', value='-1', format='float')
 
     ##.......................................................................................
 
