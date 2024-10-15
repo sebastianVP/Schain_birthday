@@ -1,7 +1,7 @@
 # REPOSITORIO SCHAIN PRUEBAS AMISR-14
 
 
-Nota:
+Notas de desarrollo:
 ---
 
 * La carpeta superior se llama **BIRTHDAY**
