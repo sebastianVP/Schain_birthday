@@ -25,6 +25,8 @@ def main():
     #outPath = '/home/soporte/Data/AMISR14/2024/ISR'
     #outPath = '/home/soporte/Data/AMISR-procdata/AMISR-proc120/2022/ISR/'
     procpath = "/mnt/c/Users/soporte/Downloads/proc_amisr"
+    procpath2 = "/mnt/c/Users/soporte/Downloads/proc_amisr2"
+
 
 
 
@@ -153,21 +155,6 @@ def main():
     opObj41 = param_proc.addOperation(name='SpectralMoments', optype='other')
 
 
-    opObj52 = param_proc.addOperation(name='HDFWriter', optype='other')
-    opObj52.addParameter(name='path', value=procpath)
-    opObj52.addParameter(name='blocksPerFile', value='100', format='int')
-    opObj52.addParameter(name='metadataList', value='type,inputUnit,heightList,paramInterval,timeZone', format='list')
-    opObj52.addParameter(name='dataList', value='moments,data_snr,noise,utctime,utctimeInit', format='list')
-    ##opObj52.addParameter(name='dataList', value='data_param,data_SNR,noise,utctime,utctimeInit', format='list')
-    ##opObj52.addParameter(name='mode', value='1', format='int')
-    
-    opObj53 = merge.addOperation(name='WindProfiler', optype='other')
-    opObj53.addParameter(name='technique', value='DBS', format='str')
-    opObj53.addParameter(name='dirCosx', value='0.0, -0.0, -0.04, 0.04', format='floatlist') 
-    opObj53.addParameter(name='dirCosy', value='0.0, -0.0, -0.04, -0.03', format='floatlist')
-    opObj53.addParameter(name='correctAzimuth', value='0', format='float')
-    #opObj23.addParameter(name='correctAzimuth', value='52.5414', format='float')
-    opObj53.addParameter(name='correctFactor', value='-1', format='float')
 
     ##.......................................................................................
 
@@ -246,7 +233,51 @@ def main():
     # opObj14.addParameter(name='server', value=realtime_server)
     # opObj14.addParameter(name='sender_period', value='60')
     # opObj14.addParameter(name='tag', value='AMISR')
+    #--------------------------NEW--------------
 
+    opObj52 = param_proc.addOperation(name='HDFWriter', optype='other')
+    opObj52.addParameter(name='path', value=procpath)
+    opObj52.addParameter(name='blocksPerFile', value='100', format='int')
+    opObj52.addParameter(name='metadataList', value='type,inputUnit,heightList,paramInterval,timeZone', format='list')
+    opObj52.addParameter(name='dataList', value='moments,data_snr,noise,utctime,utctimeInit', format='list')
+    ##opObj52.addParameter(name='dataList', value='data_param,data_SNR,noise,utctime,utctimeInit', format='list')
+    ##opObj52.addParameter(name='mode', value='1', format='int')
+    
+    opObj53 = param_proc.addOperation(name='WindProfiler', optype='other')
+    opObj53.addParameter(name='technique', value='DBS', format='str')
+    opObj53.addParameter(name='dirCosx', value='0.0, -0.0, -0.04, 0.04, 0.04', format='floatlist') 
+    opObj53.addParameter(name='dirCosy', value='0.0, -0.0, -0.04, -0.03, 0.03', format='floatlist')
+    opObj53.addParameter(name='correctAzimuth', value='0', format='float')
+    #opObj23.addParameter(name='correctAzimuth', value='52.5414', format='float')
+    opObj53.addParameter(name='correctFactor', value='-1', format='float')
+
+
+    titles=('Zonal Wind,Meriodinal Wind,Vertical Wind')
+    
+    opObj54 = param_proc.addOperation(name='GenericRTIPlot')
+    opObj54.addParameter(name='colormaps', value='RdBu_r,RdBu_r,RdBu_r')
+    opObj54.addParameter(name='attr_data', value='data_output')
+#opObj23.addParameter(name='colormaps', value='RdBu,RdBu')
+#opObj23.addParameter(name='attr_data', value='data_output')
+    opObj54.addParameter(name='wintitle', value='Winds')
+    opObj54.addParameter(name='save', value=outPath)# figpath
+    opObj54.addParameter(name='titles', value=titles)
+    opObj54.addParameter(name='zfactors', value='1,1,1')
+    opObj54.addParameter(name='zlimits', value='(-100,100),(-100,100),(-60,60)')
+    opObj54.addParameter(name='cb_labels', value='m/s,m/s,cm/s')
+    opObj54.addParameter(name='throttle', value='1')
+    opObj54.addParameter(name='xmin', value=0)
+    opObj54.addParameter(name='xmax', value=24)
+    
+    opObj55 = param_proc.addOperation(name='HDFWriter', optype='other')
+    opObj55.addParameter(name='path', value=procpath2)
+    opObj55.addParameter(name='blocksPerFile', value='100', format='int')
+    opObj55.addParameter(name='metadataList',value='type,inputUnit,outputInterval',format='list')
+    opObj55.addParameter(name='dataList',value='data_output,utctime,heightList',format='list')    
+    #opObj55.addParameter(name='metadataList', value='type,inputUnit,heightList,paramInterval,timeZone', format='list')
+    #opObj55.addParameter(name='dataList', value='moments,data_snr,noise,utctime,utctimeInit', format='list')
+    #opObj55.addParameter(name='dataList', value='data_param,data_SNR,noise,utctime,utctimeInit', format='list')
+    #opObj55.addParameter(name='mode', value='1', format='int')
 
     controllerObj.start()
     controllerObj.join()
