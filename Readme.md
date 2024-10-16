@@ -66,8 +66,8 @@ Ubicamos la carpeta equipo:
 * Server: 190.187.237.233
 * user: visitor
 * password: visitorJRO
+* ruta: /WINDS_AMISR
 
-ruta: /WINDS_AMISR
 # **OJO**
 
 Queda pendiente en fecha 15/10/2024
