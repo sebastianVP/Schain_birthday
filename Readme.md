@@ -56,7 +56,18 @@ dan origen al archivo de prueba:
 
 - winds_amisr.py
 
+# **CONEXION FTP**
 
+Para conectar mediante FTP con Windows, simplemente necesitaremos los datos de conexión FTP al servidor. Al realizarlo directamente desde Windows, no necesitamos ningún software adicional, lo cual nos resultará muy útil cuando nos encontramos en un entorno de oficina con permisos restringidos.
+
+Ubicamos la carpeta equipo:
+- Click derecho Agregar una ubicacion de red.
+
+* Server: 190.187.237.233
+* user: visitor
+* password: visitorJRO
+
+ruta: /WINDS_AMISR
 # **OJO**
 
 Queda pendiente en fecha 15/10/2024
