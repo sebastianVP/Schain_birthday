@@ -16,5 +16,8 @@
 | Cosx   | 0      | 0      | 0      | 0.246 | 0.246|      
 | Cosy   | 0      | 0.238  | -0.238 | 0     | 0    |      
 
-
+# **PATRON**
 <img src="amisr_patron.PNG" />
+
+# **APUNTES Y PATRON EN GUI**
+<img src="apunte_patron.PNG" />
