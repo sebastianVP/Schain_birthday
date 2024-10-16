@@ -14,9 +14,6 @@ from shutil import rmtree
 
 def main():
     desc = "AMISR 5 Beam Experiment"
-
-
-
     inPath = '/mnt/c/Users/soporte/Downloads/2024' 
     outPath = '/home/soporte/BIRTHDAY'
     procpath = "/mnt/c/Users/soporte/Downloads/proc_amisr"
@@ -24,6 +21,8 @@ def main():
 
     realtime_server='10.10.110.243:4444'
 
+    db_range=['50','120']#['20','35']
+    tiempo=['0','24']
 
     localtime='1' #para ajustar el horario en las gráficas '0' para dejar en utc
 
@@ -105,18 +104,7 @@ def main():
     opObj03.addParameter(name='minFreq', value='-40000', format='float')
     opObj03.addParameter(name='maxFreq', value='40000', format='float')
 
-    ##.......................................................................................
-    #--------------------    Parameters Processing Unit up  ------------
-
-    param_proc = controllerObj.addProcUnit(datatype='ParametersProc', inputId=spc_proc.getId())
-    opObj41 = param_proc.addOperation(name='SpectralMoments', optype='other')
-
-
-
-    ##.......................................................................................
-
     #SpectraPlot
-    '''
     opObj12 = spc_proc.addOperation(name='SpectraPlot', optype='external')
     opObj12.addParameter(name='wintitle', value='SPC ISR-AMISR', format='str')
     opObj12.addParameter(name='showprofile', value='0', format='int')
@@ -135,10 +123,37 @@ def main():
     opObj12.addParameter(name='server', value=realtime_server)
     opObj12.addParameter(name='sender_period', value='60')
     opObj12.addParameter(name='tag', value='AMISR')
+
+
+
+    ##.......................................................................................
+    #--------------------    Parameters Processing Unit up  ------------
+
+    param_proc = controllerObj.addProcUnit(datatype='ParametersProc', inputId=spc_proc.getId())
+    opObj41 = param_proc.addOperation(name='SpectralMoments', optype='other')
+
+
+    opObj42 = param_proc.addOperation(name='SpectralMomentsPlot', optype='other')
+    opObj42.addParameter(name='id', value='003', format='int')
+    opObj42.addParameter(name='ymin', value='0', format='int')
+    opObj42.addParameter(name='ymax', value='10', format='int')
+    opObj42.addParameter(name='zmin', value=db_range[0], format='int')
+    opObj42.addParameter(name='zmax', value=db_range[1], format='int')
+    opObj42.addParameter(name='save', value=outPath, format='str')
     '''
-
+    opObj42 = param_proc.addOperation(name='DopplerPlot', optype='other')
+    opObj42.addParameter(name='id', value='005', format='int')
+    #opObj22.addParameter(name='paramIndex', value='1', format='int')
+    #opObj22.addParameter(name='colormap', value='0', format='bool')
+    opObj42.addParameter(name='xmin', value=tiempo[0], format='float')
+    opObj42.addParameter(name='xmax', value=tiempo[1], format='float')
+    opObj42.addParameter(name='SNRmin', value='-3', format='int')
+    opObj42.addParameter(name='SNRmax', value='6', format='int')
+    opObj42.addParameter(name='save', value=outPath, format='str')
+    opObj42.addParameter(name='showSNR', value='1', format='bool')
+    ''' 
+    ##.......................................................................................
     #--------------------------NEW--------------
-
     opObj52 = param_proc.addOperation(name='HDFWriter', optype='other')
     opObj52.addParameter(name='path', value=procpath)
     opObj52.addParameter(name='blocksPerFile', value='100', format='int')
