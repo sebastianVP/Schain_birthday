@@ -15,7 +15,7 @@ Podriamos considerar 0.238 porque el cos x e y  en N y S a 75° no se puede ver 
 | Canales | Ch0 | Ch1   | Ch2   | Ch3   | Ch4   |
 | Azimuth| 0      | 0      | 180    | 90     | -90 |     
 | Elevación| 90  | 75.07  | 75.07  | 75.6  | 75.6 |      
-| Cosx   | 0      | 0      | 0      | 0.246 | 0.246|      
+| Cosx   | 0      | 0      | 0      | 0.246 | -0.246|      
 | Cosy   | 0      | 0.246  | -0.246 | 0     | 0    |      
 
 # **PATRON**

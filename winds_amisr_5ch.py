@@ -164,8 +164,8 @@ def main():
     
     opObj53 = param_proc.addOperation(name='WindProfiler', optype='other')
     opObj53.addParameter(name='technique', value='DBS', format='str')
-    opObj53.addParameter(name='dirCosx', value='0.0, -0.0, -0.04, 0.04, 0.04', format='floatlist') 
-    opObj53.addParameter(name='dirCosy', value='0.0, -0.0, -0.04, -0.03, 0.03', format='floatlist')
+    opObj53.addParameter(name='dirCosx', value='0.0, 0.0, 0.0, 0.246, -0.246', format='floatlist') 
+    opObj53.addParameter(name='dirCosy', value='0.0, 0.246, -0.246, 0.0, 0.0', format='floatlist')
     opObj53.addParameter(name='correctAzimuth', value='0', format='float')
     #opObj23.addParameter(name='correctAzimuth', value='52.5414', format='float')
     opObj53.addParameter(name='correctFactor', value='-1', format='float')
